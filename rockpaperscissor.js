@@ -24,7 +24,53 @@ function getComputerChoice() {
         computerChoice = "scissor";
     }
 
+    console.log("computer choose",computerChoice)
+
     return computerChoice;
 }
 
-console.log(getComputerChoice())
+
+function getPlayerSelection() {
+    let playerSelection = prompt("select Rock, Paper or Scissor")
+    playerSelection = playerSelection.toLowerCase()
+    console.log("player choose", playerSelection)
+    return playerSelection;
+}
+
+function playRound() {
+    let computerChoice = getComputerChoice()
+    let playerSelection = getPlayerSelection()
+
+    if (computerChoice === "rock" && playerSelection === "rock") {
+        console.log("tie")
+    }
+    else if (computerChoice === "rock" && playerSelection === "paper") {
+        console.log("you win")
+    }
+    else if (computerChoice === "rock" && playerSelection === "scissor") {
+        console.log("you lose")
+    }
+    else if (computerChoice === "paper" && playerSelection === "rock") {
+        console.log("you lose")
+    }
+    else if (computerChoice === "paper" && playerSelection === "paper") {
+        console.log("tie")
+    }
+    else if (computerChoice === "paper" && playerSelection === "scissor") {
+        console.log("you win")
+    }
+    else if (computerChoice === "scissor" && playerSelection === "rock") {
+        console.log("you win")
+    }
+    else if (computerChoice === "scissor" && playerSelection === "paper") {
+        console.log("you lose")
+    }
+    else if (computerChoice === "scissor" && playerSelection === "scissor") {
+        console.log("tie")
+    }
+    else {
+        console.log("invalid input")
+    }
+}
+
+playRound();
