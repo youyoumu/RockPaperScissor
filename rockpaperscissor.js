@@ -79,7 +79,6 @@ function playRound() {
         console.log("invalid input")
     }
 
-    console.log(win)
     return win;
 }
 
@@ -137,7 +136,20 @@ function game() {
     }
     else {}
     
-    console.log(computerScore, playerScore)
+    console.log("Computer Score:",computerScore,"Player Score:",playerScore)
+    scoreCheck(computerScore,playerScore)
+}
+
+function scoreCheck(computerScore,playerScore) {
+    if (computerScore > playerScore) {
+        console.log("Match result: You Lose")
+    }
+    else if (computerScore < playerScore) {
+        console.log("Match result: You Win")
+    }
+    else {
+        console.log("Match result: Tie")
+    }
 }
 
 game()
