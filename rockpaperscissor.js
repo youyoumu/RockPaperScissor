@@ -7,4 +7,24 @@ function randomNumber123() {
 
     return number;
 }
-console.log(randomNumber123())
+
+// function that return either rock, paper, or scissor for computer choice 
+function getComputerChoice() {
+    let computerChoice = randomNumber123();
+
+    console.log(computerChoice)
+
+    if (computerChoice === 1) {
+        computerChoice = "rock";
+    }
+    else if (computerChoice === 2) {
+        computerChoice = "paper";
+    }
+    else {
+        computerChoice = "scissor";
+    }
+
+    return computerChoice;
+}
+
+console.log(getComputerChoice())
