@@ -1,14 +1,14 @@
 // generating random number between 1 or 2 or 3
-function randomNumber123() {
+function getRandomNumber123() {
     let number = 0;
     number = Math.floor(Math.random() * 3) + 1;
 
     return number;
 }
 
-// function that return either rock, paper, or scissor for computer choice 
+// function that return either rock, paper, or scissors for computer choice 
 function getComputerChoice() {
-    let computerChoice = randomNumber123();
+    let computerChoice = getRandomNumber123();
 
 
     if (computerChoice === 1) {
@@ -18,19 +18,19 @@ function getComputerChoice() {
         computerChoice = "paper";
     }
     else {
-        computerChoice = "scissor";
+        computerChoice = "scissors";
     }
 
-    console.log("computer choose",computerChoice)
+    console.log("Computer chooses",computerChoice)
 
     return computerChoice;
 }
 
 
 function getPlayerSelection() {
-    let playerSelection = prompt("select Rock, Paper or Scissor")
+    let playerSelection = prompt("select Rock, Paper or Scissors")
     playerSelection = playerSelection.toLowerCase()
-    console.log("player choose", playerSelection)
+    console.log("Player chooses", playerSelection)
     return playerSelection;
 }
 
@@ -40,39 +40,39 @@ function playRound() {
     let win
 
     if (computerChoice === "rock" && playerSelection === "rock") {
-        console.log("tie")
+        console.log("Tie")
         win = 2
     }
     else if (computerChoice === "rock" && playerSelection === "paper") {
-        console.log("you win")
+        console.log("You win")
         win = 1
     }
-    else if (computerChoice === "rock" && playerSelection === "scissor") {
-        console.log("you lose")
+    else if (computerChoice === "rock" && playerSelection === "scissors") {
+        console.log("You lose")
         win = 0
     }
     else if (computerChoice === "paper" && playerSelection === "rock") {
-        console.log("you lose")
+        console.log("You lose")
         win = 0
     }
     else if (computerChoice === "paper" && playerSelection === "paper") {
-        console.log("tie")
+        console.log("Tie")
         win = 2
     }
-    else if (computerChoice === "paper" && playerSelection === "scissor") {
-        console.log("you win")
+    else if (computerChoice === "paper" && playerSelection === "scissors") {
+        console.log("You win")
         win = 1
     }
-    else if (computerChoice === "scissor" && playerSelection === "rock") {
-        console.log("you win")
+    else if (computerChoice === "scissors" && playerSelection === "rock") {
+        console.log("You win")
         win = 1
     }
-    else if (computerChoice === "scissor" && playerSelection === "paper") {
-        console.log("you lose")
+    else if (computerChoice === "scissors" && playerSelection === "paper") {
+        console.log("You lose")
         win = 0
     }
-    else if (computerChoice === "scissor" && playerSelection === "scissor") {
-        console.log("tie")
+    else if (computerChoice === "scissors" && playerSelection === "scissors") {
+        console.log("Tie")
         win = 2
     }
     else {
@@ -137,20 +137,20 @@ function game() {
     else {}
     
     console.log("Computer Score:",computerScore,"Player Score:",playerScore)
-    scoreCheck(computerScore,playerScore)
+    checkScore(computerScore,playerScore);
 }
 
-function scoreCheck(computerScore,playerScore) {
+function checkScore(computerScore,playerScore) {
     if (computerScore > playerScore) {
-        console.log("Match result: You Lose")
+        console.log("Match result: You Lose");
     }
     else if (computerScore < playerScore) {
-        console.log("Match result: You Win")
+        console.log("Match result: You Win");
     }
     else {
-        console.log("Match result: Tie")
-    }
+        console.log("Match result: Tie");
+    };
 }
 
-game()
+game();
 
