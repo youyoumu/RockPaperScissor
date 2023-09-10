@@ -36,7 +36,7 @@ function getPlayerSelection() {
 
 function playRound() {
     let computerChoice = getComputerChoice()
-    let playerSelection = getPlayerSelection()
+    let playerSelection = playerSelectionUI
     let win
 
     if (computerChoice === "rock" && playerSelection === "rock") {
@@ -82,63 +82,6 @@ function playRound() {
     return win;
 }
 
-function game() {
-    let computerScore = 0
-    let playerScore = 0
-
-    let win = playRound();
-    if (win === 1) {
-        playerScore = playerScore + 1
-
-    }
-    else if (win === 0) {
-        computerScore = computerScore + 1
-    }
-    else {}
-
-    win = playRound();
-    if (win === 1) {
-        playerScore = playerScore + 1
-
-    }
-    else if (win === 0) {
-        computerScore = computerScore + 1
-    }
-    else {}
-
-    win = playRound();
-    if (win === 1) {
-        playerScore = playerScore + 1
-
-    }
-    else if (win === 0) {
-        computerScore = computerScore + 1
-    }
-    else {}
-
-    win = playRound();
-    if (win === 1) {
-        playerScore = playerScore + 1
-
-    }
-    else if (win === 0) {
-        computerScore = computerScore + 1
-    }
-    else {}
-
-    win = playRound();
-    if (win === 1) {
-        playerScore = playerScore + 1
-
-    }
-    else if (win === 0) {
-        computerScore = computerScore + 1
-    }
-    else {}
-    
-    console.log("Computer Score:",computerScore,"Player Score:",playerScore)
-    checkScore(computerScore,playerScore);
-}
 
 function checkScore(computerScore,playerScore) {
     if (computerScore > playerScore) {
@@ -152,5 +95,37 @@ function checkScore(computerScore,playerScore) {
     };
 }
 
-game();
+let buttons = document.querySelectorAll('.button');
+let playerSelectionUI;
+
+buttons.forEach(button => {
+    button.addEventListener('click', () => click());
+
+    function click() {
+        console.log(`Player chooses ${button.id}`);
+        getPlayerSelectionUI();
+        playRound();
+    }
+
+    function getPlayerSelectionUI() {
+        playerSelectionUI = button.id;
+    }
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
