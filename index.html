@@ -8,10 +8,17 @@
     <link rel="stylesheet" href="style.css"
 
 </head>
-<body>
+<body class="body">
     <div class="rpsImage">
-        <div>player image</div>
-        <div>computer image</div>
+        <div class="playerContainer">
+            <div>PLAYER</div>
+            <img id="playerImage"/>
+        </div>
+        <div class="playerContainer">
+            <div>COMPUTER</div>
+            <img id="computerImage"/>
+        </div>
+        
     </div>
     </div>
     <div class="buttonContainer">
@@ -24,7 +31,10 @@
         <div id="computerScore">Computer score: </div>
     </div>
         
-    <div id="matchResult"></div>
+    <div>
+        <div id="matchResult"></div>
+    </div>
+    
 
 <script src="rockpaperscissor.js"></script>
 </body>

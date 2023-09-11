@@ -22,6 +22,7 @@ function getComputerChoice() {
     }
 
     console.log("Computer chooses",computerChoice)
+    computerImage.src = `image/${computerChoice}.jpg`
 
     return computerChoice;
 }
@@ -102,6 +103,8 @@ let buttons = document.querySelectorAll('.button');
 let playerScoreUI = document.querySelector('#playerScore')
 let computerScoreUI = document.querySelector('#computerScore');
 let matchResult = document.querySelector('#matchResult');
+let playerImage = document.querySelector('#playerImage');
+let computerImage = document.querySelector('#computerImage');
 
 let playerSelectionUI;
 let playerScore = 0;
@@ -136,6 +139,8 @@ buttons.forEach(button => {
         addScore();
         playerScoreUI.textContent = `Player score: ${playerScore}`;
         computerScoreUI.textContent = `Computer score: ${computerScore}`
+        playerImage.src = `image/${button.id}.jpg`
+
     }
 
     function getPlayerSelectionUI() {

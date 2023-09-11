@@ -1,7 +1,90 @@
-.button {
+body {
+    background-color: bisque;
+    font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.rpsImage {
+    display: flex;
+    justify-content: space-evenly;
+    height: 250px;
     
 }
 
-#rock {
-    
+.playerContainer {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+
 }
+
+#playerImage, #computerImage{
+    width: 150px;
+    max-width: 150px;
+    border-radius: 20px;
+}
+
+.buttonContainer {
+    display: flex;  
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+#rock, #paper, #scissors{
+    background: #5E5DF0;
+    border-radius: 5px;
+    box-shadow: black 0 10px 20px -10px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 8px 18px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: fit-content;
+    word-break: break-word;
+    border: 0;
+}
+    
+#playerScore, #computerScore {
+    background: #c05454;
+    border-radius: 5px;
+    box-shadow: black 0 10px 20px -10px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 8px 18px;
+    border: 0;
+}
+
+#matchResult {
+    display: flex;
+    font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    padding: 50px;
+    justify-content: center;
+}
+
+.score {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+
