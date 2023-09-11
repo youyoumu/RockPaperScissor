@@ -86,9 +86,12 @@ function playRound() {
 function checkScore(computerScore,playerScore) {
     if (computerScore > playerScore) {
         console.log("Match result: You Lose");
+        matchResult.textContent = "Match result: You Lose"
+
     }
     else if (computerScore < playerScore) {
         console.log("Match result: You Win");
+        matchResult.textContent = "Match result: You Win"
     }
     else {
         console.log("Match result: Tie");
@@ -96,7 +99,33 @@ function checkScore(computerScore,playerScore) {
 }
 
 let buttons = document.querySelectorAll('.button');
+let playerScoreUI = document.querySelector('#playerScore')
+let computerScoreUI = document.querySelector('#computerScore');
+let matchResult = document.querySelector('#matchResult');
+
 let playerSelectionUI;
+let playerScore = 0;
+let computerScore = 0;
+
+function addScore() {
+    let win = playRound()
+    if (win === 0) {
+        computerScore++;
+    }
+    else if (win === 1) {
+        playerScore++;
+    }
+    isMaxScore();
+}
+
+function isMaxScore() {
+    let maxScore = 5;
+    if (playerScore === maxScore || computerScore === maxScore) {
+        checkScore(computerScore, playerScore);
+        //playerScore = 0;
+        //computerScore = 0;
+    }
+}
 
 buttons.forEach(button => {
     button.addEventListener('click', () => click());
@@ -104,7 +133,9 @@ buttons.forEach(button => {
     function click() {
         console.log(`Player chooses ${button.id}`);
         getPlayerSelectionUI();
-        playRound();
+        addScore();
+        playerScoreUI.textContent = `Player score: ${playerScore}`;
+        computerScoreUI.textContent = `Computer score: ${computerScore}`
     }
 
     function getPlayerSelectionUI() {
